@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "st-256color", NULL, NULL,           0,         0,          1,           0,        -1 },
+	{ "URxvt",       NULL, NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL, "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ NULL,   "Navigator", NULL,           1 << 2,    0,          0,          -1,        1  },
 	{ "discord",     NULL, NULL,           1 << 3,    0,          0,          -1,        1  },
@@ -63,7 +64,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL};
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "st", "fish", NULL };
 
 #include <X11/XF86keysym.h>
 static Key keys[] = {
