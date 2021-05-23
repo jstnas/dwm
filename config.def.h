@@ -27,13 +27,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "st-256color", NULL, NULL,           0,         0,          1,           0,        -1 },
-	{ "URxvt",       NULL, NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,          NULL, "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
-	{ NULL,   "Navigator", NULL,           1 << 2,    0,          0,          -1,        1  },
-	{ "discord",     NULL, NULL,           1 << 3,    0,          0,          -1,        1  },
-	{ "Thunderbird", NULL, NULL,           1 << 4,    0,          0,          -1,        1  },
+	/* class         instance        title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "st-256color", NULL,           NULL,           0,         0,          1,           0,        -1 },
+	{ "URxvt",       NULL,           NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,          NULL,           "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "Godot",       "Godot_Engine", NULL,           0,         0,          0,           0,        -1 },
+	{ NULL,          "Godot_Engine", NULL,           0,         1,          0,           0,        -1 },
+	{ NULL,          "Navigator",    NULL,           1 << 2,    0,          0,          -1,        1  },
+	{ "discord",     NULL,           NULL,           1 << 3,    0,          0,          -1,        1  },
+	{ "Thunderbird", NULL,           NULL,           1 << 4,    0,          0,          -1,        1  },
 };
 
 /* layout(s) */
@@ -108,9 +110,9 @@ static Key keys[] = {
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          SHCMD("~/.local/bin/change_volume -10%") },
 	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("~/.local/bin/change_backlight +10%") },
 	{ 0,        XF86XK_MonBrightnessDown,      spawn,          SHCMD("~/.local/bin/change_backlight -10%") },
-	{ 0,                        XK_Print,      spawn,          SHCMD("~/.local/bin/screenshot") },
-	{ ControlMask,              XK_Print,      spawn,          SHCMD("~/.local/bin/screenshot -s") },
-	{ ShiftMask,                XK_Print,      spawn,          SHCMD("~/.local/bin/screenshot -st 9999999") },
+	{ 0,                        XK_Print,      spawn,          SHCMD("/home/iota/.local/bin/screenshot") },
+	{ ControlMask,              XK_Print,      spawn,          SHCMD("/home/iota/.local/bin/screenshot -s") },
+	{ ShiftMask,                XK_Print,      spawn,          SHCMD("/home/iota/.local/bin/screenshot -st 99999") },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("tabbed surf -e") },
 	{ MODKEY|ShiftMask,             XK_g,      spawn,          SHCMD("godot") },
