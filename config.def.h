@@ -63,16 +63,9 @@ static const Layout layouts[] = {
 
 #define STATUSBAR "dwmblocks"
 
-/* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", NULL};
-static const char *termcmd[]  = { "st", "fish", NULL };
-
 #include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -105,17 +98,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0,                XF86XK_AudioMute,      spawn,          SHCMD("~/.local/bin/mute_volume") },
-	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          SHCMD("~/.local/bin/change_volume +") },
-	{ 0,         XF86XK_AudioLowerVolume,      spawn,          SHCMD("~/.local/bin/change_volume -") },
-	{ 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("~/.local/bin/change_backlight +") },
-	{ 0,        XF86XK_MonBrightnessDown,      spawn,          SHCMD("~/.local/bin/change_backlight -") },
-	{ 0,                        XK_Print,      spawn,          SHCMD("~/.local/bin/scrot") },
-	{ ControlMask,              XK_Print,      spawn,          SHCMD("~/.local/bin/scrot -s") },
-	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("tabbed surf -e") },
-	{ MODKEY|ShiftMask,             XK_g,      spawn,          SHCMD("godot") },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("discord") },
 };
 
 /* button definitions */
